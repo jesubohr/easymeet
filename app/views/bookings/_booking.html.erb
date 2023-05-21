@@ -1,32 +1,35 @@
-<div id="<%= dom_id booking %>">
-  <p>
-    <strong>Status:</strong>
-    <%= booking.status %>
-  </p>
+<tr id="<%= dom_id booking %>">
+  <td class="p-4 border border-slate-300 text-left">
+    <%= form_with (model: booking, method: :patch) do |form| %>
+      <%= form.select :status, options_for_select(Booking.statuses.map { |key, value| [key.capitalize, key] }, form.object.status, {}, { class: input_class,, onchange: "this.form.submit()" }) %>
+    <% end %>
+  </td>
 
-  <p>
-    <strong>First name:</strong>
-    <%= booking.first_name %>
-  </p>
+  <td class="p-4 border border-slate-300 text-left">
+    <%= booking.name %>
+  </td>
 
-  <p>
-    <strong>Last name:</strong>
-    <%= booking.last_name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
+  <td class="p-4 border border-slate-300 text-left">
     <%= booking.email %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Start at:</strong>
-    <%= booking.start_at %>
-  </p>
+  <td class="p-4 border border-slate-300 text-left">
+    <%= booking.start_at.strftime("%b %e, %Y at %l:%M %p") %>
+  </td>
 
-  <p>
-    <strong>End at:</strong>
-    <%= booking.end_at %>
-  </p>
+  <td class="p-4 border border-slate-300 text-left">
+    <%= booking.end_at.strftime("%b %e, %Y at %l:%M %p") %>
+  </td>
 
-</div>
+  <td class="p-4 border border-slate-300 text-left">
+    <%= booking.booking_type.name %>
+  </td>
+
+  <td class="p-4 border border-slate-300 text-left">
+    <%= booking.booking_type.payment_required? ? "Yes" : "No" %>
+  </td>
+
+  <td class="p-4 border border-slate-300 text-left">
+    <%= booking.customer_paid? ? "Yes" : "No" %>
+  </td>
+</tr>

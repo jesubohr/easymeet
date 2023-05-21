@@ -1,0 +1,64 @@
+<div class="container mx-auto px-4 pb-32">
+  <div class="flex items-center justify-between pb-6 border-b">
+    <h1 class="text-4xl font-bold">Dashboard</h1>
+    <%= link_to "Create Booking Type", new_booking_type_path, class: button_class(theme: "primary") %>
+  </div>
+  <div class="grid grid-cols-3 gap-6 py-10">
+    <%= render @booking_types %>
+  </div>
+
+  <% if @bookings.pending.any? %>
+    <h2 class="mt-10 mb-6 pt-10 border-t border-slate-200 text-2xl font-bold">Pending Bookings</h2>
+    <table class="w-full table-collapse">
+      <thead>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Status</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Name</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Email</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Start Date</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">End Date</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Booking Type</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Premium</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Paid</th>
+      </thead>
+      <tbody>
+        <%= render @bookings.pending %>
+      </tbody>
+    </table>
+  <% end %>
+
+  <% if @bookings.approved.any? %>
+    <h2 class="mt-10 mb-6 pt-10 border-t border-slate-200 text-2xl font-bold">Approved Bookings</h2>
+    <table class="w-full table-collapse">
+      <thead>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Status</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Name</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Email</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Start Date</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">End Date</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Booking Type</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Premium</th>
+      </thead>
+      <tbody>
+        <%= render @bookings.approved %>
+      </tbody>
+    </table>
+  <% end %>
+
+  <% if @bookings.rejected.any? %>
+    <h2 class="mt-10 mb-6 pt-10 border-t border-slate-200 text-2xl font-bold">Rejected Bookings</h2>
+    <table class="w-full table-collapse">
+      <thead>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Status</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Name</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Email</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Start Date</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">End Date</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Booking Type</th>
+        <th class="p-3 bg-slate-50 border border-slate-300 text-left">Premium</th>
+      </thead>
+      <tbody>
+        <%= render @bookings.rejected %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
