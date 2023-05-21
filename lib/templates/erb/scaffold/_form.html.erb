@@ -23,7 +23,7 @@
   <% else -%>
     <%%= form.label :<%= attribute.column_name %>, class: label_class %>
     <% if attribute.field_type == "checkbox" -%>
-      <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, class: input_checkbox %>
+      <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, class: checkbox_class %>
     <% else -%>
       <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, class: input_class %>
     <% end -%>

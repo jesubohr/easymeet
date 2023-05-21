@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 @import 'actiontext.css';
+
+div:has(input[type="checkbox"]:not(:checked)) + div {
+  opacity: 0.5;
+  pointer-events: none;
+}

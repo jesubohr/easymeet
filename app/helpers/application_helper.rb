@@ -2,7 +2,7 @@ module ApplicationHelper
   def flash_classes(flash_type)
     flash_base = "px-2 py-4 mx-auto font-sans font-medium text-center text-white"
     {
-      notice: "bg-indigo-600 #{flash_base}",
+      notice: "bg-orange-600 #{flash_base}",
       error:  "bg-red-600 #{flash_base}",
       alert: "bg-red-600 #{flash_base}"
     }.stringify_keys[flash_type.to_s] || flash_type.to_s
@@ -45,7 +45,7 @@ module ApplicationHelper
 
     case theme
     when themes[:primary]
-      "bg-indigo-600 hover:bg-indigo-700 text-white"
+      "bg-orange-600 hover:bg-orange-700 text-white"
     when themes[:secondary]
       "bg-teal-600 hover:bg-teal-700 text-white"
     when themes[:transparent]
