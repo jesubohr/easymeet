@@ -13,6 +13,14 @@
     </div>
 
     <div class="mb-6">
+      <%= f.label "Booking Handle", class: label_class %>
+      <%= f.text_field :booking_link, class: input_class %>
+      <p class="pt-1 text-xs italic text-gray-500">
+        The handle to share your booking link, e.g. https://easymeet.com/<strong>booking_handle</strong>
+      </p>
+    </div>
+
+    <div class="mb-6">
       <div class="flex">
         <%= f.label :password, class: label_class %>
         <% if @minimum_password_length %>
