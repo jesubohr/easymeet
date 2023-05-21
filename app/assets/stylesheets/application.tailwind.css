@@ -3,7 +3,7 @@
 @tailwind utilities;
 @import 'actiontext.css';
 
-div:has(input[type="checkbox"]:not(:checked)) + div {
+div:has(input[type="checkbox"]:not(:checked)) + div.peer {
   opacity: 0.5;
   pointer-events: none;
 }
