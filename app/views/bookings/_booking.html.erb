@@ -1,7 +1,7 @@
 <tr id="<%= dom_id booking %>">
   <td class="p-4 border border-slate-300 text-left">
-    <%= form_with (model: booking, method: :patch) do |form| %>
-      <%= form.select :status, options_for_select(Booking.statuses.map { |key, value| [key.capitalize, key] }, form.object.status, {}, { class: input_class,, onchange: "this.form.submit()" }) %>
+    <%= form_with(model: booking, method: :patch) do |form| %>
+      <%= form.select :status, options_for_select(Booking.statuses.map { |key, value| [key.capitalize, key] }, form.object.status), {}, { class: input_class, onchange: "this.form.submit()" } %>
     <% end %>
   </td>
 
@@ -19,6 +19,12 @@
 
   <td class="p-4 border border-slate-300 text-left">
     <%= booking.end_at.strftime("%b %e, %Y at %l:%M %p") %>
+  </td>
+
+  <td class="p-4 border border-slate-300 text-left">
+    <span class="italic">
+      <%= booking.notes %>
+    </span>
   </td>
 
   <td class="p-4 border border-slate-300 text-left">

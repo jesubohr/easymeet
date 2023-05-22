@@ -58,7 +58,7 @@ module ApplicationHelper
   end
 
   def style_button(variant, theme)
-    base = "rounded text-center font-sans font-normal outline-none leading-normal cursor-pointer transition ease-in-out duration-200 font-medium"
+    base = "rounded text-center font-sans font-normal outline-none leading-normal cursor-pointer transition ease-in-out duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
 
     case variant
     when "large"
