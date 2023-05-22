@@ -19,8 +19,8 @@ user = User.create!(
 
 bookin_type1 = BookingType.create!(
   user: user,
-  name: "15 Minute Meeting",
-  location: "Zoom",
+  name: "15 minute meeting",
+  location: "zoom",
   description: "A 15 minute meeting with James Wood",
   color: "#2ecc71",
   duration: 15,
@@ -30,8 +30,8 @@ bookin_type1 = BookingType.create!(
 
 bookin_type2 = BookingType.create!(
   user: user,
-  name: "30 Minute Meeting",
-  location: "Zoom",
+  name: "30 minute meeting",
+  location: "zoom",
   description: "A 30 minute meeting with James Wood",
   color: "#3498db",
   duration: 30,
@@ -41,8 +41,8 @@ bookin_type2 = BookingType.create!(
 
 bookin_type3 = BookingType.create!(
   user: user,
-  name: "60 Minute Meeting",
-  location: "Zoom",
+  name: "60 minute meeting",
+  location: "zoom",
   description: "A 1 hour meeting with James Wood",
   color: "#e4a241",
   duration: 60,
