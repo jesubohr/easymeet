@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   scope '/:booking_link', as: :user do
     resources :bookings, only: [:index, :new]
   end
+
+  resources :webhooks, only: [:create]
   
   root to: 'home#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
