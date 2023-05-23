@@ -1,24 +1,6 @@
-# README
+<div align="center">
+  <img src="./app/assets/images/easymeet-small.png" />
+  <h1>EasyMeet</h1>
+</div>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+_Managing your meetings never was this easy. Just create a template and it will appear in your profile, so people can book a meeting with you._
