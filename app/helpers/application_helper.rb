@@ -21,7 +21,7 @@ module ApplicationHelper
   end
 
   def checkbox_class(options={})
-    "rounded border-gray-300 border focus:ring-2 focus:ring-gray-200 text-blue-500 mr-1 #{options[:extended_classes]}"
+    "rounded border-gray-300 border focus:ring-2 focus:ring-gray-200 text-orange-600 mr-1 #{options[:extended_classes]}"
   end
 
   def link_class(options={})

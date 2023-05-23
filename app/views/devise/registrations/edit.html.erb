@@ -49,9 +49,4 @@
       <%= f.submit "Update", class: button_class(theme: "primary", variant: "expanded") %>
     </div>
   <% end %>
-
-  <div class="mb-6">
-    <hr class="mb-6" />
-    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: button_class(variant: "small", additional_classes: "border") %>
-  </div>
 <% end %>

@@ -1,21 +1,27 @@
 <%
   subtitle ||= ""
-  title ||= "" %>
-<div class="items-start justify-center block h-full grid-cols-1 gap-4 lg:grid lg:items-center lg:grid-cols-2">
-  <div class="relative flex items-center justify-center h-32 overflow-hidden lg:h-screen bg-gradient-to-tr from-black to-gray-800">
-    <div class="inset-auto z-30 flex items-center justify-center flex-1 w-full h-auto font-sans text-center text-white shadow lg:flex lg:h-screen lg:absolute xl:text-5xl">
-      <h1 class="font-semibold text-4xl">Your App Name Here</h1>
-    </div>
+  title ||= ""
+%>
+<div class="flex items-center justify-center gap-4 h-screen lg:grid lg:items-center lg:grid-cols-2">
+  <div class="hidden relative max-w-7xl h-screen lg:block">
+    <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-700 opacity-30"></div>
+    <%= image_tag asset_path('bg-image.jpg'), class: "w-full h-full object-cover object-center", alt: "Woman using a laptop" %>
   </div>
-  <div>
-    <div class="relative z-20 px-6 mx-auto lg:px-12 max-w-lg">
-      <div class="mb-4 xl:mt-8">
-        <div class="mt-6 mb-4 lg:mt-0">
-          <%= link_to "Back", root_path, class: "text-gray-600 underline flex items-center hover:text-gray-700 hover:no-underline" %>
+  <div class="relative grow flex flex-col justify-center h-full">
+    <%= image_tag asset_path('easymeet-logo.png'), class: "absolute top-4 left-1/2 lg:left-2 w-12 rounded-full", alt: "EasyMeet logo" %>
+    <div class="relative z-20 mx-auto px-6 lg:px-12 w-full max-w-xl">
+      <div class="flex flex-col items-start mb-5 xl:mt-8">
+        <div class="mt-6 mb-2 lg:mt-0">
+          <%= link_to root_path, class: "text-gray-600 underline flex items-center hover:text-gray-700 hover:no-underline" do %>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 mr-1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            Back
+          <% end %>
         </div>
 
         <% unless title.blank? %>
-          <h2 class="pt-6 font-sans text-3xl font-black leading-tight"><%= title %></h2>
+          <h2 class="pt-3 font-sans text-3xl font-black leading-tight"><%= title %></h2>
         <% end %>
 
         <% unless subtitle.blank? %>
